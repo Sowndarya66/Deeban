@@ -1,0 +1,11 @@
+import json
+import plotly.express as px
+
+json_data = '{"January": 12000, "February": 15000, "March": 18000, "April": 14000}'
+data = json.loads(json_data)
+
+months = list(data.keys())
+sales = list(data.values())
+
+fig = px.bar(x=months, y=sales, labels={'x': 'Month', 'y': 'Sales'}, title="Monthly Sales")
+fig.show()
